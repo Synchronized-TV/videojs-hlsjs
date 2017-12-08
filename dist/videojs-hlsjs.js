@@ -1,4 +1,4 @@
-/*! videojs-hlsjs - v1.4.8 - 2017-06-06*/
+/*! videojs-hlsjs - v1.4.8 - 2017-12-08*/
 (function (window, videojs, Hls) {
   'use strict';
 
@@ -12,7 +12,6 @@
 
   var Hlsjs = videojs.extend(Html5, {
     initHls_: function() {
-      this.options_.hls.autoStartLoad = false;
       this.hls_ = new Hls(this.options_.hls);
 
       this.bindExternalCallbacks_();
@@ -150,7 +149,7 @@
         } else if (this.options_.startLevelByHeight) {
           startLevel = this.getLevelByHeight_(this.options_.startLevelByHeight);
           autoLevel = hasAutoLevel;
-        } 
+        }
 
         if (!hasAutoLevel && (!startLevel || startLevel.index === -1)) {
           startLevel = this.levels_[this.levels_.length-1];

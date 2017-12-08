@@ -11,7 +11,6 @@
 
   var Hlsjs = videojs.extend(Html5, {
     initHls_: function() {
-      this.options_.hls.autoStartLoad = false;
       this.hls_ = new Hls(this.options_.hls);
 
       this.bindExternalCallbacks_();
@@ -149,7 +148,7 @@
         } else if (this.options_.startLevelByHeight) {
           startLevel = this.getLevelByHeight_(this.options_.startLevelByHeight);
           autoLevel = hasAutoLevel;
-        } 
+        }
 
         if (!hasAutoLevel && (!startLevel || startLevel.index === -1)) {
           startLevel = this.levels_[this.levels_.length-1];
