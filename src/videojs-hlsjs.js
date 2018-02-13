@@ -1,4 +1,4 @@
-(function (window, videojs, Hls) {
+function videojsHlsjs(videojs, Hls) {
   'use strict';
 
   /**
@@ -486,4 +486,7 @@
   Tech.registerTech('hlsjs', Hlsjs);
   videojs.options.techOrder.push('hlsjs');
 
-})(window, window.videojs, window.Hls);
+}
+
+/* global module */
+module.exports = videojsHlsjs;

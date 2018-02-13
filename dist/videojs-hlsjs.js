@@ -1,5 +1,5 @@
-/*! videojs-hlsjs - v1.4.8 - 2017-12-08*/
-(function (window, videojs, Hls) {
+/*! videojs-hlsjs - v1.4.8 - 2018-02-13*/
+function videojsHlsjs(videojs, Hls) {
   'use strict';
 
   /**
@@ -487,4 +487,7 @@
   Tech.registerTech('hlsjs', Hlsjs);
   videojs.options.techOrder.push('hlsjs');
 
-})(window, window.videojs, window.Hls);
+}
+
+/* global module */
+module.exports = videojsHlsjs;
