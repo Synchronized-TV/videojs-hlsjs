@@ -467,7 +467,10 @@ function videojsHlsjs(videojs, Hls) {
   };
 
   Hlsjs.canPlaySource = function(source) {
-    return !(videojs.options.hlsjs.favorNativeHLS && Html5.canPlaySource(source)) &&
+    // Use a fake address to prevent false negative in IE 11 on long urls.
+    var canPlaySource = source.length && /\.m3u8$/i.test(source[0].src && Html5.canPlaySource('http://fake.url/playlist.m3u8');
+
+    return !(videojs.options.hlsjs.favorNativeHLS && canPlaySource) &&
       (source.type && /^application\/(?:x-|vnd\.apple\.)mpegurl/i.test(source.type)) &&
       Hls.isSupported();
   };

@@ -25,6 +25,7 @@
         "grunt": "grunt"
     },
     "devDependencies": {
+        "babel-plugin-transform-es2017-object-entries": "0.0.4",
         "grunt": "^1.0.1",
         "grunt-contrib-clean": "^1.0.0",
         "grunt-contrib-concat": "^1.0.1",
